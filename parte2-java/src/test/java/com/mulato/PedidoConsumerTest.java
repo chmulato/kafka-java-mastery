@@ -19,7 +19,7 @@ class PedidoConsumerTest {
         ConsumerRecord<String, String> record =
                 new ConsumerRecord<>("pedidos", 0, 0L, "1", "Pedido #1");
         ConsumerRecords<String, String> records =
-                new ConsumerRecords<>(Collections.singletonMap(record.topicPartition(), Collections.singletonList(record)));
+                new ConsumerRecords<>(Collections.singletonMap(new org.apache.kafka.common.TopicPartition("pedidos", 0), Collections.singletonList(record)));
 
         when(mockConsumer.poll(Duration.ofMillis(500))).thenReturn(records);
 

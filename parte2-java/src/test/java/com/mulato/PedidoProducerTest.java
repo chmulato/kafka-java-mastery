@@ -3,7 +3,6 @@ package com.mulato;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.Properties;
 
