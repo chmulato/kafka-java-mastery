@@ -1,0 +1,70 @@
+# Parte Final: Kafka Avançado e Produção
+
+![Apache Kafka com Java – Parte Final](img/kafka-java-parte-final.png)
+
+## Visão Geral
+
+Esta parte é dedicada a tópicos avançados, integração com o ecossistema Kafka, monitoramento, segurança e práticas recomendadas para ambientes de produção.
+
+## Processamento Avançado
+
+### Kafka Streams
+
+- Processamento de dados em tempo real diretamente no Kafka
+- Exemplo de uso para agregações, joins e transformações
+
+### Kafka Connect
+
+- Integração com bancos de dados, sistemas legados e APIs
+- Uso de conectores prontos (JDBC, Elasticsearch, etc.)
+
+### Schema Registry
+
+- Gerenciamento de esquemas de dados (Avro, Protobuf, JSON Schema)
+- Evolução de schemas e compatibilidade
+
+## Monitoramento e Observabilidade
+
+- Monitoramento de brokers, tópicos e consumidores
+- Uso de JMX, Prometheus e Grafana para métricas
+- Monitoramento de lag de consumidores
+- Alertas e dashboards
+
+## Segurança
+
+- Autenticação (SASL, SSL/TLS)
+- Autorização (ACLs)
+- Boas práticas para ambientes corporativos
+
+## Deploy e Operação
+
+- Deploy em cluster (alta disponibilidade e replicação)
+- Kafka em nuvem (Confluent Cloud, AWS MSK, Azure Event Hubs)
+- Backup, restauração e upgrades
+- Gerenciamento de recursos e tuning de performance
+
+## Boas Práticas para Produção
+
+- Configuração de retenção de dados
+- Estratégias de particionamento
+- Políticas de replicação
+- Testes de resiliência e failover
+- Documentação e automação de operações
+
+## Exercícios Sugeridos
+
+1. Configurar um cluster Kafka com múltiplos brokers
+2. Implementar monitoramento com Prometheus e Grafana
+3. Configurar autenticação e autorização
+4. Realizar testes de failover e recuperação
+5. Integrar Kafka com outros sistemas usando Kafka Connect
+
+## Recursos Recomendados
+
+- [Confluent Platform Documentation](https://docs.confluent.io/)
+- [Kafka Streams Documentation](https://kafka.apache.org/documentation/streams/)
+- [Spring Kafka Reference](https://docs.spring.io/spring-kafka/docs/current/reference/html/)
+
+---
+
+Parabéns! Você concluiu o guia completo. Agora está pronto para atuar com Apache Kafka em ambientes profissionais e avançados.

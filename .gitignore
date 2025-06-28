@@ -1,3 +1,6 @@
+/parte1-fundamentos/target/
+/parte2-java/target/
+/parte-final-avancado/target/
 # Compiled class file
 *.class
 
@@ -22,3 +25,34 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Maven
+/logs/
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# Kafka logs e dados locais
+kafka-logs/
+zookeeper-logs/
+
+# Arquivos temporários
+*.tmp
+*.swp
+*~
+
+# Arquivos de configuração sensíveis
+*.env
