@@ -69,29 +69,36 @@ kafka-console-consumer --topic meu-topico --from-beginning --bootstrap-server lo
 
 ## Exemplo Java: Producer e Consumer Simples
 
-Os exemplos a seguir estão disponíveis como arquivos prontos para uso em:
+A seguir, você encontra exemplos didáticos de um Producer e um Consumer em Java, ideais para quem está começando a experimentar o Apache Kafka na prática. Os arquivos completos estão disponíveis em:
 `parte1-fundamentos/src/main/java/SimpleProducer.java` e `parte1-fundamentos/src/main/java/SimpleConsumer.java`.
 
-Para compilar e rodar os exemplos:
+### Como executar os exemplos
 
-1.Certifique-se de que o Kafka está rodando em `localhost:9092` (use o docker-compose fornecido).
-2.Crie o tópico `meu-topico` se necessário:
+1. **Garanta que o Kafka está rodando em `localhost:9092`**  
+   Utilize o `docker-compose.yml` fornecido na pasta `parte1-fundamentos/` para subir o ambiente local rapidamente:
+   ```sh
+   docker-compose up -d
+   ```
 
-```sh
-docker exec -it <nome_do_container_kafka> kafka-topics --bootstrap-server localhost:9092 --create --topic meu-topico --partitions 1 --replication-factor 1
-```
+2. **Crie o tópico `meu-topico` se necessário**  
+   Execute o comando abaixo para criar o tópico no seu cluster Kafka local:
+   ```sh
+   docker exec -it <nome_do_container_kafka> kafka-topics --bootstrap-server localhost:9092 --create --topic meu-topico --partitions 1 --replication-factor 1
+   ```
+   > Substitua `<nome_do_container_kafka>` pelo nome real do container Kafka em execução (ex: `kafka` ou `kafka1`).
 
-3.Compile e execute com Maven:
+3. **Compile e execute os exemplos Java usando Maven**  
+   O projeto já possui um `pom.xml` pronto na pasta `parte1-fundamentos` com todas as dependências necessárias. Basta rodar:
+   ```sh
+   mvn compile
+   mvn exec:java -Dexec.mainClass=SimpleProducer
+   mvn exec:java -Dexec.mainClass=SimpleConsumer
+   ```
+   > O SimpleProducer envia uma mensagem de exemplo para o tópico, e o SimpleConsumer consome e imprime as mensagens recebidas.
 
-```sh
-mvn compile
-mvn exec:java -Dexec.mainClass=SimpleProducer
-mvn exec:java -Dexec.mainClass=SimpleConsumer
-```
+### Producer Java — Enviando uma mensagem
 
-O `pom.xml` já está pronto na pasta `parte1-fundamentos` com todas as dependências necessárias.
-
-### Producer Java
+O Producer é responsável por publicar mensagens em um tópico Kafka. Veja um exemplo básico:
 
 ```java
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -113,7 +120,9 @@ public class SimpleProducer {
 }
 ```
 
-### Consumer Java
+### Consumer Java — Lendo mensagens do tópico
+
+O Consumer é responsável por ler as mensagens publicadas em um tópico. Veja um exemplo básico:
 
 ```java
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -140,6 +149,8 @@ public class SimpleConsumer {
     }
 }
 ```
+
+> **Dica:** Você pode modificar os exemplos para enviar e consumir múltiplas mensagens, testar diferentes tópicos ou experimentar com múltiplos consumidores para entender o funcionamento dos consumer groups.
 
 Esses exemplos são apenas para fins didáticos e funcionam em ambientes locais com o Kafka rodando no padrão (`localhost:9092`).
 

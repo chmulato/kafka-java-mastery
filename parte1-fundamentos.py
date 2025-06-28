@@ -30,6 +30,9 @@ def main():
     html = re.sub(r'(Avance para a Parte II:[^<\[]*)\(parte2-java\\?\.md\)', r'\1(parte2-java.html)', html)
     # Substitui o link de navegação para o início, se houver (md para html)
     html = re.sub(r'(Voltar ao Guia Principal[^<\[]*)\(README\\?\.md\)', r'\1(README.html)', html)
+    # Substitui todos os links .md por .html, exceto links externos
+    html = re.sub(r'\((parte[\w\-]+)\\?\.md\)', r'(\1.html)', html)
+    html = re.sub(r'\((README)\\?\.md\)', r'(README.html)', html)
     with final_path.open('w', encoding='utf-8') as f:
         f.write(html)
     html_path.unlink()  # Remove temporário
