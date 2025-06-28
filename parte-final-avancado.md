@@ -80,21 +80,11 @@ Para fixar o aprendizado e experimentar cenários reais de produção, pratique 
 5. **Integrar Kafka com outros sistemas usando Kafka Connect**  
    Configure conectores para importar/exportar dados de bancos relacionais, arquivos ou APIs. Experimente transformar dados em trânsito.
 
-## Recursos Recomendados
+## Exercícios Práticos
 
-- [Confluent Platform Documentation](https://docs.confluent.io/) — Guia completo do ecossistema Kafka
-- [Kafka Streams Documentation](https://kafka.apache.org/documentation/streams/) — Processamento de streams nativo
-- [Spring Kafka Reference](https://docs.spring.io/spring-kafka/docs/current/reference/html/) — Integração Kafka + Spring Boot
+Para praticar e aprofundar os tópicos avançados, consulte também o arquivo auxiliar:
 
----
-
-## Código-Fonte e Exemplos
-
-Todo o conteúdo, exemplos práticos e arquivos de configuração desta parte estão disponíveis no repositório oficial do projeto no GitHub:
-
-[🔗 github.com/chmulato/kafka-java-mastery](https://github.com/chmulato/kafka-java-mastery)
-
-Acesse, explore e contribua!
+- `parte-final-avancado/exercicios-parte-final.md` — Desafios práticos de produção, automação, monitoramento e segurança, com espaço para anotações e roteiro de estudos.
 
 ---
 

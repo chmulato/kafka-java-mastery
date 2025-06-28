@@ -149,6 +149,67 @@ while (true) {
 
 Esses exemplos são apenas para fins didáticos e funcionam em ambientes locais com o Kafka rodando no padrão (`localhost:9092`).
 
+## Teste Integrado: Producer e Consumer na Prática
+
+Para garantir que sua aplicação Java está realmente se comunicando com o Kafka, é fundamental realizar testes de integração. O projeto já inclui um exemplo realista em `parte2-java/src/test/java/com/mulato/KafkaIntegrationTest.java`.
+
+Esse teste automatizado:
+
+- Sobe o ambiente Kafka local (use `docker-compose up -d` na pasta `parte2-java/`).
+- Envia uma mensagem para o tópico `pedidos` usando um Producer.
+- Consome a mensagem usando um Consumer e valida se ela foi recebida corretamente.
+
+### Como executar o teste integrado
+
+1.**Suba o ambiente Kafka e Zookeeper**
+
+   No terminal, dentro da pasta `parte2-java/`:
+
+```bash
+docker-compose up -d
+```
+
+2.**Garanta que o tópico `pedidos` existe**
+
+   Se necessário, crie o tópico executando dentro do container Kafka:
+
+```sh
+docker exec -it <nome_do_container_kafka> kafka-topics --bootstrap-server localhost:9092 --create --topic pedidos --partitions 1 --replication-factor 1
+```
+
+   > Use `docker ps` para descobrir o nome do container Kafka.
+
+3.**Execute o teste com Maven**
+
+```sh
+mvn test
+```
+
+O teste irá:
+
+- Enviar uma mensagem para o tópico `pedidos`.
+- Consumir a mensagem e validar se ela foi recebida corretamente.
+
+4.**Finalize o ambiente**
+
+   Após os testes, pare os containers:
+
+```sh
+docker-compose down
+```
+
+> O teste é didático e pode ser adaptado para outros tópicos, mensagens ou cenários de integração.
+
+---
+
+## Exercícios Práticos
+
+Para praticar e aprofundar os conceitos desta parte, consulte também o arquivo auxiliar:
+
+- `exercicios-parte2.md` — Exercícios práticos de integração Java + Kafka, implementação de Producer/Consumer, testes e espaço para anotações.
+
+---
+
 ## Boas Práticas
 
 - Use consumer groups para escalabilidade

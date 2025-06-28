@@ -164,6 +164,14 @@ Esses exemplos são apenas para fins didáticos e funcionam em ambientes locais 
 
 ---
 
+## Exercícios Práticos
+
+Para praticar e aprofundar os conceitos desta parte, consulte também o arquivo auxiliar:
+
+- `parte1-fundamentos/exercicios-parte1.md` — Exercícios de fundamentos, comandos básicos, experimentação inicial e espaço para anotações.
+
+---
+
 ## Código-Fonte e Exemplos
 
 Todo o conteúdo, exemplos práticos e arquivos de configuração deste artigo estão disponíveis no repositório oficial do projeto no GitHub:

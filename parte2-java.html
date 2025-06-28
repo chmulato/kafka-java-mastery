@@ -147,6 +147,52 @@ while (true) {
 <p><strong>Dica:</strong> Experimente rodar múltiplos consumers no mesmo grupo para ver como o Kafka distribui as mensagens entre eles.</p>
 </blockquote>
 <p>Esses exemplos são apenas para fins didáticos e funcionam em ambientes locais com o Kafka rodando no padrão (<code>localhost:9092</code>).</p>
+<h2 id="teste-integrado-producer-e-consumer-na-pratica">Teste Integrado: Producer e Consumer na Prática</h2>
+<p>Para garantir que sua aplicação Java está realmente se comunicando com o Kafka, é fundamental realizar testes de integração. O projeto já inclui um exemplo realista em <code>parte2-java/src/test/java/com/mulato/KafkaIntegrationTest.java</code>.</p>
+<p>Esse teste automatizado:</p>
+<ul>
+<li>Sobe o ambiente Kafka local (use <code>docker-compose up -d</code> na pasta <code>parte2-java/</code>).</li>
+<li>Envia uma mensagem para o tópico <code>pedidos</code> usando um Producer.</li>
+<li>Consome a mensagem usando um Consumer e valida se ela foi recebida corretamente.</li>
+</ul>
+<h3 id="como-executar-o-teste-integrado">Como executar o teste integrado</h3>
+<p>1.<strong>Suba o ambiente Kafka e Zookeeper</strong></p>
+<p>No terminal, dentro da pasta <code>parte2-java/</code>:</p>
+<pre class="codehilite"><code class="language-bash">docker-compose up -d
+</code></pre>
+
+<p>2.<strong>Garanta que o tópico <code>pedidos</code> existe</strong></p>
+<p>Se necessário, crie o tópico executando dentro do container Kafka:</p>
+<pre class="codehilite"><code class="language-sh">docker exec -it &lt;nome_do_container_kafka&gt; kafka-topics --bootstrap-server localhost:9092 --create --topic pedidos --partitions 1 --replication-factor 1
+</code></pre>
+
+<blockquote>
+<p>Use <code>docker ps</code> para descobrir o nome do container Kafka.</p>
+</blockquote>
+<p>3.<strong>Execute o teste com Maven</strong></p>
+<pre class="codehilite"><code class="language-sh">mvn test
+</code></pre>
+
+<p>O teste irá:</p>
+<ul>
+<li>Enviar uma mensagem para o tópico <code>pedidos</code>.</li>
+<li>Consumir a mensagem e validar se ela foi recebida corretamente.</li>
+</ul>
+<p>4.<strong>Finalize o ambiente</strong></p>
+<p>Após os testes, pare os containers:</p>
+<pre class="codehilite"><code class="language-sh">docker-compose down
+</code></pre>
+
+<blockquote>
+<p>O teste é didático e pode ser adaptado para outros tópicos, mensagens ou cenários de integração.</p>
+</blockquote>
+<hr />
+<h2 id="exercicios-praticos">Exercícios Práticos</h2>
+<p>Para praticar e aprofundar os conceitos desta parte, consulte também o arquivo auxiliar:</p>
+<ul>
+<li><code>exercicios-parte2.md</code> — Exercícios práticos de integração Java + Kafka, implementação de Producer/Consumer, testes e espaço para anotações.</li>
+</ul>
+<hr />
 <h2 id="boas-praticas">Boas Práticas</h2>
 <ul>
 <li>Use consumer groups para escalabilidade</li>

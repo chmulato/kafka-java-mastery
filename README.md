@@ -10,7 +10,7 @@ Este repositório foi simplificado para facilitar o aprendizado e a consulta, fo
 
 - [Parte II: Java com Kafka](parte2-java.md)  
   ![Parte II](img/kafka-java-parte2.png)  
-  Como integrar aplicações Java ao Kafka, producers, consumers, serialização, exemplos práticos e melhores práticas.
+  Como integrar aplicações Java ao Kafka, producers, consumers, serialização, exemplos práticos, melhores práticas **e teste integrado automatizado** (Producer + Consumer) usando JUnit e Kafka real (veja `KafkaIntegrationTest.java`).
 
 - [Parte Final: Avançado](parte-final-avancado.md)  
   ![Parte Final](img/kafka-java-parte-final.png)  
@@ -29,7 +29,7 @@ Este repositório foi simplificado para facilitar o aprendizado e a consulta, fo
 
 ## Estrutura de Pastas e Arquivos
 
-```
+```markdown
 kafka-java-mastery/
 ├── README.md                # Este guia principal
 ├── parte1-fundamentos.md    # Parte I: Fundamentos do Apache Kafka (Markdown)
@@ -54,7 +54,8 @@ kafka-java-mastery/
 │   │   │   └── PedidoConsumer.java   # Exemplo avançado de Consumer
 │   │   └── test/java/com/mulato/
 │   │       ├── PedidoProducerTest.java   # Teste unitário Producer
-│   │       └── PedidoConsumerTest.java   # Teste unitário Consumer
+│   │       ├── PedidoConsumerTest.java   # Teste unitário Consumer
+│   │       └── KafkaIntegrationTest.java # Teste integrado Producer+Consumer
 │   └── target/                # Artefatos compilados
 │       └── parte2-java-1.0-SNAPSHOT.jar
 └── artefatos-final/           # Artefatos práticos da Parte Final
@@ -102,5 +103,15 @@ Este projeto está licenciado sob a MIT License.
 Esses links trazem roteiros, exemplos, dicas de prática, troubleshooting e materiais para aprofundar ou expandir o treinamento.
 
 ---
+
+## Arquivos de Exercícios Práticos
+
+O repositório inclui arquivos auxiliares com roteiros de exercícios, desafios práticos e espaço para anotações em cada etapa do aprendizado:
+
+- `parte1-fundamentos/exercicios-parte1.md` — Exercícios de fundamentos, comandos básicos e experimentação inicial.
+- `exercicios-parte2.md` — Exercícios de integração Java + Kafka, implementação de Producer/Consumer e testes.
+- `parte-final-avancado/exercicios-parte-final.md` — Desafios avançados de produção, automação, monitoramento e segurança.
+
+Consulte esses arquivos para praticar, registrar aprendizados e aprofundar seus estudos.
 
 Para dúvidas, sugestões ou contribuições, abra um issue ou envie um pull request.
