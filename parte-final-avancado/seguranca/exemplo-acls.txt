@@ -1,3 +1,0 @@
-# Exemplo de ACLs Kafka
-User:alice	Topic:financeiro	Read,Write
-User:bob	Group:grupo-consumidor	Read

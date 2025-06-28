@@ -1,8 +1,0 @@
-{
-  "type": "record",
-  "name": "Pedido",
-  "fields": [
-    {"name": "id", "type": "string"},
-    {"name": "valor", "type": "double"}
-  ]
-}
