@@ -27,53 +27,52 @@ Este repositório foi simplificado para facilitar o aprendizado e a consulta, fo
 - Scripts de backup/restauração e automação
 - Checklists e documentação de boas práticas para produção
 
-## Estrutura de Pastas
+## Estrutura de Pastas e Arquivos
 
-```markdown
+```
 kafka-java-mastery/
-├── README.md
-├── parte1-fundamentos.md
-├── parte2-java.md
-├── parte-final-avancado.md
-├── LICENSE
-├── img/
-├── parte1-fundamentos/
-│   └── docker-compose.yml
-├── parte2-java/
-│   ├── docker-compose.yml
-│   ├── pom.xml
+├── README.md                # Este guia principal
+├── parte1-fundamentos.md    # Parte I: Fundamentos do Apache Kafka (Markdown)
+├── parte1-fundamentos.html  # Parte I: Fundamentos (HTML gerado)
+├── parte2-java.md           # Parte II: Java com Kafka (Markdown)
+├── parte2-java.html         # Parte II: Java com Kafka (HTML gerado)
+├── parte-final-avancado.md  # Parte Final: Kafka Avançado e Produção (Markdown)
+├── parte-final-avancado.html# Parte Final: Kafka Avançado e Produção (HTML gerado)
+├── LICENSE                  # Licença do projeto
+├── img/                     # Imagens ilustrativas das partes
+│   ├── kafka-java-parte1.png
+│   ├── kafka-java-parte2.png
+│   └── kafka-java-parte-final.png
+├── parte1-fundamentos/      # Ambiente e exemplos da Parte I
+│   └── docker-compose.yml   # Docker Compose para ambiente local
+├── parte2-java/             # Projeto Java completo da Parte II
+│   ├── docker-compose.yml   # Ambiente Kafka para testes
+│   ├── pom.xml              # Dependências Maven
 │   ├── src/
-│   │   ├── main/
-│   │   │   └── java/
-│   │   │       └── com/
-│   │   │           └── mulato/
-│   │   │               ├── PedidoConsumer.java
-│   │   │               └── PedidoProducer.java
-│   │   └── test/
-│   │       └── java/
-│   │           └── com/
-│   │               └── mulato/
-│   │                   ├── PedidoConsumerTest.java
-│   │                   └── PedidoProducerTest.java
-│   └── target/
-│       ├── parte2-java-1.0-SNAPSHOT.jar
-│       └── ...
-└── artefatos-final/
-    ├── docker-compose-multibroker.yml
+│   │   ├── main/java/com/mulato/
+│   │   │   ├── PedidoProducer.java   # Exemplo avançado de Producer
+│   │   │   └── PedidoConsumer.java   # Exemplo avançado de Consumer
+│   │   └── test/java/com/mulato/
+│   │       ├── PedidoProducerTest.java   # Teste unitário Producer
+│   │       └── PedidoConsumerTest.java   # Teste unitário Consumer
+│   └── target/                # Artefatos compilados
+│       └── parte2-java-1.0-SNAPSHOT.jar
+└── artefatos-final/           # Artefatos práticos da Parte Final
+    ├── docker-compose-multibroker.yml    # Cluster multi-broker
     ├── monitoramento/
-    │   ├── prometheus.yml
-    │   └── grafana-dashboard-example.json
+    │   ├── prometheus.yml                # Config Prometheus
+    │   └── grafana-dashboard-example.json# Dashboard Grafana
     ├── seguranca/
-    │   ├── server.properties
-    │   └── exemplo-acls.txt
+    │   ├── server.properties             # Configuração de broker seguro
+    │   └── exemplo-acls.txt              # Exemplo de ACLs
     ├── schema-registry/
-    │   └── exemplo-schema-avro.avsc
+    │   └── exemplo-schema-avro.avsc      # Exemplo de schema Avro
     ├── kafka-connect/
-    │   └── exemplo-connector.json
+    │   └── exemplo-connector.json        # Exemplo de conector Kafka Connect
     ├── backup-e-automacao/
-    │   └── backup-topicos.sh
+    │   └── backup-topicos.sh             # Script de backup
     └── boas-praticas/
-        └── checklist-producao.md
+        └── checklist-producao.md         # Checklist de produção
 ```
 
 ## Como usar
