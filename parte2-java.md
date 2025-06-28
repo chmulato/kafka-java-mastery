@@ -69,56 +69,85 @@ while (true) {
 }
 ```
 
-## Exemplo Prático
+## Exemplo Prático: Producer e Consumer em Java
 
-Veja exemplos completos de Producer e Consumer em Java no diretório [`src/main/java/com/mulato/`](parte2-java/src/main/java/com/mulato/):
+A seguir, você encontra exemplos didáticos de Producer e Consumer em Java, ideais para quem está começando a integrar aplicações com o Apache Kafka. Os arquivos completos estão em:
+`parte2-java/src/main/java/com/mulato/PedidoProducer.java` e `parte2-java/src/main/java/com/mulato/PedidoConsumer.java`.
 
-- [`PedidoProducer.java`](parte2-java/src/main/java/com/mulato/PedidoProducer.java): envia mensagens simulando pedidos.
-- [`PedidoConsumer.java`](parte2-java/src/main/java/com/mulato/PedidoConsumer.java): consome e imprime os pedidos recebidos.
+### Como executar os exemplos
 
-### Como executar
+1.**Garanta que o Kafka está rodando em `localhost:9092`**  
 
-#### Usando Maven
+   Utilize o `docker-compose.yml` fornecido na pasta `parte2-java/` para subir o ambiente local rapidamente:
 
-1. Compile o projeto:
+```sh
+docker-compose up -d
+```
 
-   ```sh
-   mvn clean compile
-   ```
+2.**Compile o projeto Java com Maven**  
 
-2. Execute o Producer:
+   O projeto já possui um `pom.xml` pronto com todas as dependências necessárias. Basta rodar:
 
-   ```sh
-   mvn exec:java -Dexec.mainClass="com.mulato.PedidoProducer"
-   ```
+```sh
+mvn clean compile
+```
 
-3. Execute o Consumer:
+3.**Execute o Producer para enviar mensagens**  
 
-   ```sh
-   mvn exec:java -Dexec.mainClass="com.mulato.PedidoConsumer"
-   ```
+```sh
+mvn exec:java -Dexec.mainClass="com.mulato.PedidoProducer"
+```
 
-#### Compilação manual (sem Maven)
+   > O Producer simula o envio de pedidos para o tópico Kafka.
 
-1. Compile os arquivos Java:
+4.**Execute o Consumer para ler as mensagens**  
 
-   ```sh
-   javac -cp "path/to/kafka-clients.jar" parte2-java/src/main/java/com/mulato/PedidoProducer.java parte2-java/src/main/java/com/mulato/PedidoConsumer.java
-   ```
+```sh
+mvn exec:java -Dexec.mainClass="com.mulato.PedidoConsumer"
+```
 
-2. Execute o Producer:
+   > O Consumer consome e imprime os pedidos recebidos.
 
-   ```sh
-   java -cp ".:path/to/kafka-clients.jar:parte2-java/src/main/java" com.mulato.PedidoProducer
-   ```
+> Você pode modificar os exemplos para enviar múltiplos pedidos, testar diferentes tópicos ou experimentar com múltiplos consumidores para entender o funcionamento dos consumer groups.
 
-3. Execute o Consumer:
+### Producer Java — Enviando pedidos
 
-   ```sh
-   java -cp ".:path/to/kafka-clients.jar:parte2-java/src/main/java" com.mulato.PedidoConsumer
-   ```
+O Producer é responsável por publicar mensagens (pedidos) em um tópico Kafka. Veja um exemplo básico:
 
-> Substitua `path/to/kafka-clients.jar` pelo caminho real do jar do Kafka Client.
+```java
+Properties props = new Properties();
+props.put("bootstrap.servers", "localhost:9092");
+props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+KafkaProducer<String, String> producer = new KafkaProducer<>(props);
+ProducerRecord<String, String> record = new ProducerRecord<>("meu-topico", "chave", "mensagem");
+producer.send(record);
+producer.close();
+```
+
+### Consumer Java — Lendo pedidos do tópico
+
+O Consumer é responsável por ler as mensagens publicadas no tópico. Veja um exemplo básico:
+
+```java
+Properties props = new Properties();
+props.put("bootstrap.servers", "localhost:9092");
+props.put("group.id", "meu-grupo");
+props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
+consumer.subscribe(Collections.singletonList("meu-topico"));
+while (true) {
+    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+    for (ConsumerRecord<String, String> record : records) {
+        System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
+    }
+}
+```
+
+> **Dica:** Experimente rodar múltiplos consumers no mesmo grupo para ver como o Kafka distribui as mensagens entre eles.
+
+Esses exemplos são apenas para fins didáticos e funcionam em ambientes locais com o Kafka rodando no padrão (`localhost:9092`).
 
 ## Boas Práticas
 
@@ -148,5 +177,3 @@ Todo o conteúdo, exemplos práticos e arquivos de configuração desta parte es
 [🔗 github.com/chmulato/kafka-java-mastery](https://github.com/chmulato/kafka-java-mastery)
 
 Acesse, explore e contribua!
-
-➡️ [Avance para a Parte Final: Kafka Avançado e Produção](parte-final-avancado.md)

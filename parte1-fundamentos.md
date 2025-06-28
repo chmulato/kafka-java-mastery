@@ -75,25 +75,33 @@ A seguir, você encontra exemplos didáticos de um Producer e um Consumer em Jav
 ### Como executar os exemplos
 
 1. **Garanta que o Kafka está rodando em `localhost:9092`**  
-   Utilize o `docker-compose.yml` fornecido na pasta `parte1-fundamentos/` para subir o ambiente local rapidamente:
-   ```sh
-   docker-compose up -d
-   ```
 
-2. **Crie o tópico `meu-topico` se necessário**  
+   Utilize o `docker-compose.yml` fornecido na pasta `parte1-fundamentos/` para subir o ambiente local rapidamente:
+
+```sh
+docker-compose up -d
+```
+
+2.**Crie o tópico `meu-topico` se necessário**  
+
    Execute o comando abaixo para criar o tópico no seu cluster Kafka local:
-   ```sh
-   docker exec -it <nome_do_container_kafka> kafka-topics --bootstrap-server localhost:9092 --create --topic meu-topico --partitions 1 --replication-factor 1
-   ```
+
+```sh
+docker exec -it <nome_do_container_kafka> kafka-topics --bootstrap-server localhost:9092 --create --topic meu-topico --partitions 1 --replication-factor 1
+```
+
    > Substitua `<nome_do_container_kafka>` pelo nome real do container Kafka em execução (ex: `kafka` ou `kafka1`).
 
-3. **Compile e execute os exemplos Java usando Maven**  
+3.**Compile e execute os exemplos Java usando Maven**  
+
    O projeto já possui um `pom.xml` pronto na pasta `parte1-fundamentos` com todas as dependências necessárias. Basta rodar:
-   ```sh
-   mvn compile
-   mvn exec:java -Dexec.mainClass=SimpleProducer
-   mvn exec:java -Dexec.mainClass=SimpleConsumer
-   ```
+
+```sh
+mvn compile
+mvn exec:java -Dexec.mainClass=SimpleProducer
+mvn exec:java -Dexec.mainClass=SimpleConsumer
+```
+
    > O SimpleProducer envia uma mensagem de exemplo para o tópico, e o SimpleConsumer consome e imprime as mensagens recebidas.
 
 ### Producer Java — Enviando uma mensagem
@@ -163,5 +171,3 @@ Todo o conteúdo, exemplos práticos e arquivos de configuração deste artigo e
 [🔗 github.com/chmulato/kafka-java-mastery](https://github.com/chmulato/kafka-java-mastery)
 
 Acesse, explore e contribua!
-
-➡️ [Avance para a Parte II: Java com Kafka](parte2-java.md)

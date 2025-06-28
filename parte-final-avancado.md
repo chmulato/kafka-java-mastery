@@ -67,17 +67,24 @@ Consulte cada subpasta para exemplos práticos e adapte conforme o seu ambiente.
 
 ## Exercícios Sugeridos
 
-1. Configurar um cluster Kafka com múltiplos brokers
-2. Implementar monitoramento com Prometheus e Grafana
-3. Configurar autenticação e autorização
-4. Realizar testes de failover e recuperação
-5. Integrar Kafka com outros sistemas usando Kafka Connect
+Para fixar o aprendizado e experimentar cenários reais de produção, pratique os seguintes desafios:
+
+1. **Configurar um cluster Kafka com múltiplos brokers**  
+   Monte um ambiente distribuído usando o `docker-compose-multibroker.yml` e explore como funcionam replicação, failover e balanceamento de partições.
+2. **Implementar monitoramento com Prometheus e Grafana**  
+   Utilize os exemplos de configuração para coletar métricas do Kafka e visualize-as em dashboards prontos. Experimente criar alertas para lag de consumidores e uso de disco.
+3. **Configurar autenticação e autorização**  
+   Ative SSL/SASL e defina ACLs para controlar o acesso aos tópicos. Teste diferentes cenários de permissão e bloqueio.
+4. **Realizar testes de failover e recuperação**  
+   Simule a queda de um broker e observe como o cluster se comporta. Teste a restauração de dados a partir de backups.
+5. **Integrar Kafka com outros sistemas usando Kafka Connect**  
+   Configure conectores para importar/exportar dados de bancos relacionais, arquivos ou APIs. Experimente transformar dados em trânsito.
 
 ## Recursos Recomendados
 
-- [Confluent Platform Documentation](https://docs.confluent.io/)
-- [Kafka Streams Documentation](https://kafka.apache.org/documentation/streams/)
-- [Spring Kafka Reference](https://docs.spring.io/spring-kafka/docs/current/reference/html/)
+- [Confluent Platform Documentation](https://docs.confluent.io/) — Guia completo do ecossistema Kafka
+- [Kafka Streams Documentation](https://kafka.apache.org/documentation/streams/) — Processamento de streams nativo
+- [Spring Kafka Reference](https://docs.spring.io/spring-kafka/docs/current/reference/html/) — Integração Kafka + Spring Boot
 
 ---
 
@@ -89,6 +96,8 @@ Todo o conteúdo, exemplos práticos e arquivos de configuração desta parte es
 
 Acesse, explore e contribua!
 
-Parabéns! Você concluiu o guia completo. Agora está pronto para atuar com Apache Kafka em ambientes profissionais e avançados.
+---
 
-⬅️ [Voltar ao Guia Principal (README)](README.md)
+**Parabéns! Você concluiu o guia completo.**
+
+Agora você está pronto para atuar com Apache Kafka em ambientes profissionais, dominando desde a arquitetura básica até práticas avançadas de produção, automação, segurança e monitoramento.

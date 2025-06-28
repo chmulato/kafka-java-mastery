@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Parte Final Avancado</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css'>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fa; color: #222; margin: 0; }
+        .container { max-width: 900px; margin: 2rem auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); padding: 2.5rem 2rem; }
+        h1, h2, h3, h4 { color: #0d47a1; }
+        pre, code { font-family: 'Fira Mono', 'Consolas', monospace; background: #23272e; color: #f8f8f2; border-radius: 6px; }
+        pre { padding: 1em; overflow-x: auto; }
+        a { color: #1976d2; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; }
+        th, td { border: 1px solid #ddd; padding: 10px; }
+        th { background: #f0f4fa; }
+        img { max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        @media (max-width: 600px) {
+            .container { padding: 1rem; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js'></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <div class='container'>
+        <h1 id="parte-final-kafka-avancado-e-producao">Parte Final: Kafka Avançado e Produção</h1>
+<p><img alt="Apache Kafka com Java – Parte Final" src="img/kafka-java-parte-final.png" /></p>
+<h2 id="visao-geral">Visão Geral</h2>
+<p>Esta parte é dedicada a tópicos avançados, integração com o ecossistema Kafka, monitoramento, segurança e práticas recomendadas para ambientes de produção.</p>
+<h2 id="artefatos-praticos">Artefatos Práticos</h2>
+<p>Os principais artefatos para colocar em prática os tópicos avançados desta parte estão organizados na pasta <code>artefatos-final/</code> do repositório:</p>
+<ul>
+<li><code>docker-compose-multibroker.yml</code>: Exemplo de configuração de cluster Kafka com múltiplos brokers</li>
+<li><code>monitoramento/</code>: Scripts e exemplos para Prometheus e Grafana</li>
+<li><code>seguranca/</code>: Arquivos de configuração de autenticação/autorização (SASL/SSL, ACLs)</li>
+<li><code>schema-registry/</code>: Exemplo de schema Avro</li>
+<li><code>kafka-connect/</code>: Exemplo de configuração de conector JDBC</li>
+<li><code>backup-e-automacao/</code>: Script de backup de tópicos</li>
+<li><code>boas-praticas/</code>: Checklist de produção</li>
+</ul>
+<p>Consulte cada subpasta para exemplos práticos e adapte conforme o seu ambiente.</p>
+<h2 id="processamento-avancado">Processamento Avançado</h2>
+<h3 id="kafka-streams">Kafka Streams</h3>
+<ul>
+<li>Processamento de dados em tempo real diretamente no Kafka</li>
+<li>Exemplo de uso para agregações, joins e transformações</li>
+</ul>
+<h3 id="kafka-connect">Kafka Connect</h3>
+<ul>
+<li>Integração com bancos de dados, sistemas legados e APIs</li>
+<li>Uso de conectores prontos (JDBC, Elasticsearch, etc.)</li>
+</ul>
+<h3 id="schema-registry">Schema Registry</h3>
+<ul>
+<li>Gerenciamento de esquemas de dados (Avro, Protobuf, JSON Schema)</li>
+<li>Evolução de schemas e compatibilidade</li>
+</ul>
+<h2 id="monitoramento-e-observabilidade">Monitoramento e Observabilidade</h2>
+<ul>
+<li>Monitoramento de brokers, tópicos e consumidores</li>
+<li>Uso de JMX, Prometheus e Grafana para métricas</li>
+<li>Monitoramento de lag de consumidores</li>
+<li>Alertas e dashboards</li>
+</ul>
+<h2 id="seguranca">Segurança</h2>
+<ul>
+<li>Autenticação (SASL, SSL/TLS)</li>
+<li>Autorização (ACLs)</li>
+<li>Boas práticas para ambientes corporativos</li>
+</ul>
+<h2 id="deploy-e-operacao">Deploy e Operação</h2>
+<ul>
+<li>Deploy em cluster (alta disponibilidade e replicação)</li>
+<li>Kafka em nuvem (Confluent Cloud, AWS MSK, Azure Event Hubs)</li>
+<li>Backup, restauração e upgrades</li>
+<li>Gerenciamento de recursos e tuning de performance</li>
+</ul>
+<h2 id="boas-praticas-para-producao">Boas Práticas para Produção</h2>
+<ul>
+<li>Configuração de retenção de dados</li>
+<li>Estratégias de particionamento</li>
+<li>Políticas de replicação</li>
+<li>Testes de resiliência e failover</li>
+<li>Documentação e automação de operações</li>
+</ul>
+<h2 id="exercicios-sugeridos">Exercícios Sugeridos</h2>
+<p>Para fixar o aprendizado e experimentar cenários reais de produção, pratique os seguintes desafios:</p>
+<ol>
+<li><strong>Configurar um cluster Kafka com múltiplos brokers</strong><br />
+   Monte um ambiente distribuído usando o <code>docker-compose-multibroker.yml</code> e explore como funcionam replicação, failover e balanceamento de partições.</li>
+<li><strong>Implementar monitoramento com Prometheus e Grafana</strong><br />
+   Utilize os exemplos de configuração para coletar métricas do Kafka e visualize-as em dashboards prontos. Experimente criar alertas para lag de consumidores e uso de disco.</li>
+<li><strong>Configurar autenticação e autorização</strong><br />
+   Ative SSL/SASL e defina ACLs para controlar o acesso aos tópicos. Teste diferentes cenários de permissão e bloqueio.</li>
+<li><strong>Realizar testes de failover e recuperação</strong><br />
+   Simule a queda de um broker e observe como o cluster se comporta. Teste a restauração de dados a partir de backups.</li>
+<li><strong>Integrar Kafka com outros sistemas usando Kafka Connect</strong><br />
+   Configure conectores para importar/exportar dados de bancos relacionais, arquivos ou APIs. Experimente transformar dados em trânsito.</li>
+</ol>
+<h2 id="recursos-recomendados">Recursos Recomendados</h2>
+<ul>
+<li><a href="https://docs.confluent.io/">Confluent Platform Documentation</a> — Guia completo do ecossistema Kafka</li>
+<li><a href="https://kafka.apache.org/documentation/streams/">Kafka Streams Documentation</a> — Processamento de streams nativo</li>
+<li><a href="https://docs.spring.io/spring-kafka/docs/current/reference/html/">Spring Kafka Reference</a> — Integração Kafka + Spring Boot</li>
+</ul>
+<hr />
+<h2 id="codigo-fonte-e-exemplos">Código-Fonte e Exemplos</h2>
+<p>Todo o conteúdo, exemplos práticos e arquivos de configuração desta parte estão disponíveis no repositório oficial do projeto no GitHub:</p>
+<p><a href="https://github.com/chmulato/kafka-java-mastery">🔗 github.com/chmulato/kafka-java-mastery</a></p>
+<p>Acesse, explore e contribua!</p>
+<hr />
+<p><strong>Parabéns! Você concluiu o guia completo.</strong></p>
+<p>Agora você está pronto para atuar com Apache Kafka em ambientes profissionais, dominando desde a arquitetura básica até práticas avançadas de produção, automação, segurança e monitoramento.</p>
+    </div>
+</body>
+</html>

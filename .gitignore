@@ -1,8 +1,6 @@
 /parte1-fundamentos/target/
 /parte2-java/target/
 /parte-final-avancado/target/
-# Html Documents
-*.html
 
 # Compiled class file
 *.class
