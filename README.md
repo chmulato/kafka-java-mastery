@@ -94,10 +94,13 @@ Este projeto está licenciado sob a MIT License.
 
 ## Recursos de Referência
 
-- [Plano de Estudo Completo](doc/plano_estudo_java_kafka.md): roteiro detalhado de estudos, cronograma semanal, dicas de prática, recursos, troubleshooting e checklist de progresso.
-- [Estrutura Completa de Repositório](doc/estrutura-github-completa.md): exemplo de organização profissional de pastas e arquivos, com sugestões para projetos maiores, colaboração e documentação.
+- [Documentação Oficial do Apache Kafka](https://kafka.apache.org/documentation/)
+- [Confluent Platform Documentation](https://docs.confluent.io/)
+- [Kafka Streams Documentation](https://kafka.apache.org/documentation/streams/)
+- [Spring Kafka Reference](https://docs.spring.io/spring-kafka/docs/current/reference/html/)
+- [Exemplos Oficiais e Quickstart](https://kafka.apache.org/quickstart)
 
-Esses arquivos são opcionais e servem como apoio para quem deseja aprofundar ou expandir o treinamento.
+Esses links trazem roteiros, exemplos, dicas de prática, troubleshooting e materiais para aprofundar ou expandir o treinamento.
 
 ---
 
