@@ -1,3 +1,17 @@
+/**
+ * PedidoConsumer
+ *
+ * Exemplo simples de consumidor Kafka em Java.
+ * Consome mensagens do tópico "pedidos" e imprime no console.
+ * 
+ * - Grupo de consumidores: "grupo-pedidos"
+ * - Deserialização de chave e valor como String
+ * - Uso didático para demonstração de consumo básico com Apache Kafka
+ *
+ * Requisitos:
+ * - Broker Kafka rodando em localhost:9092
+ * - Tópico "pedidos" criado previamente
+ */
 package com.mulato;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;

@@ -1,3 +1,16 @@
+/**
+ * PedidoProducer
+ *
+ * Exemplo simples de producer Kafka em Java.
+ * Envia mensagens simulando pedidos para o tópico "pedidos".
+ * 
+ * - Serialização de chave e valor como String
+ * - Uso didático para demonstração de envio básico com Apache Kafka
+ *
+ * Requisitos:
+ * - Broker Kafka rodando em localhost:9092
+ * - Tópico "pedidos" criado previamente
+ */
 package com.mulato;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
