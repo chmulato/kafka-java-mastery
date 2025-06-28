@@ -141,4 +141,4 @@ Veja exemplos completos de Producer e Consumer em Java no diretório [`src/main/
 
 ---
 
-Siga para a Parte Final para avançar em processamento, monitoramento e produção.
+➡️ [Avance para a Parte Final: Kafka Avançado e Produção](parte-final-avancado.md)

@@ -143,4 +143,4 @@ public class SimpleConsumer {
 
 Esses exemplos são apenas para fins didáticos e funcionam em ambientes locais com o Kafka rodando no padrão (`localhost:9092`).
 
-Siga para a Parte II para exemplos mais avançados e integração completa com Java.
+➡️ [Avance para a Parte II: Java com Kafka](parte2-java.md)
