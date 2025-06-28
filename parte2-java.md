@@ -6,6 +6,18 @@
 
 Esta parte mostra como integrar aplicações Java ao Apache Kafka, cobrindo desde a configuração do cliente até exemplos práticos de producers e consumers.
 
+## Estrutura de Pastas e Artefatos
+
+Os principais arquivos e diretórios desta parte estão em `parte2-java/`:
+
+- `docker-compose.yml`: ambiente Kafka para testes locais
+- `pom.xml`: dependências Maven do projeto Java
+- `src/main/java/com/mulato/`: código-fonte dos Producers e Consumers
+- `src/test/java/com/mulato/`: testes automatizados
+- `target/`: arquivos compilados e JAR gerado após build
+
+Consulte cada pasta para exemplos completos e adapte conforme seu ambiente.
+
 ## Configuração do Ambiente Java
 
 - Java 11+ (recomendado Java 17+)

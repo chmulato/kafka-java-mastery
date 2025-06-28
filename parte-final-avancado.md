@@ -6,6 +6,20 @@
 
 Esta parte é dedicada a tópicos avançados, integração com o ecossistema Kafka, monitoramento, segurança e práticas recomendadas para ambientes de produção.
 
+## Artefatos Práticos
+
+Os principais artefatos para colocar em prática os tópicos avançados desta parte estão organizados na pasta `artefatos-final/` do repositório:
+
+- `docker-compose-multibroker.yml`: Exemplo de configuração de cluster Kafka com múltiplos brokers
+- `monitoramento/`: Scripts e exemplos para Prometheus e Grafana
+- `seguranca/`: Arquivos de configuração de autenticação/autorização (SASL/SSL, ACLs)
+- `schema-registry/`: Exemplo de schema Avro
+- `kafka-connect/`: Exemplo de configuração de conector JDBC
+- `backup-e-automacao/`: Script de backup de tópicos
+- `boas-praticas/`: Checklist de produção
+
+Consulte cada subpasta para exemplos práticos e adapte conforme o seu ambiente.
+
 ## Processamento Avançado
 
 ### Kafka Streams
