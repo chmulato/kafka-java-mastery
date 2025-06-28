@@ -143,4 +143,14 @@ public class SimpleConsumer {
 
 Esses exemplos são apenas para fins didáticos e funcionam em ambientes locais com o Kafka rodando no padrão (`localhost:9092`).
 
+---
+
+## Código-Fonte e Exemplos
+
+Todo o conteúdo, exemplos práticos e arquivos de configuração deste artigo estão disponíveis no repositório oficial do projeto no GitHub:
+
+[🔗 github.com/chmulato/kafka-java-mastery](https://github.com/chmulato/kafka-java-mastery)
+
+Acesse, explore e contribua!
+
 ➡️ [Avance para a Parte II: Java com Kafka](parte2-java.md)

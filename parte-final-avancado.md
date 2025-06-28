@@ -81,4 +81,14 @@ Consulte cada subpasta para exemplos práticos e adapte conforme o seu ambiente.
 
 ---
 
+## Código-Fonte e Exemplos
+
+Todo o conteúdo, exemplos práticos e arquivos de configuração desta parte estão disponíveis no repositório oficial do projeto no GitHub:
+
+[🔗 github.com/chmulato/kafka-java-mastery](https://github.com/chmulato/kafka-java-mastery)
+
+Acesse, explore e contribua!
+
 Parabéns! Você concluiu o guia completo. Agora está pronto para atuar com Apache Kafka em ambientes profissionais e avançados.
+
+⬅️ [Voltar ao Guia Principal (README)](README.md)

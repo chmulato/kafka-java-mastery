@@ -141,4 +141,12 @@ Veja exemplos completos de Producer e Consumer em Java no diretório [`src/main/
 
 ---
 
+## Código-Fonte e Exemplos
+
+Todo o conteúdo, exemplos práticos e arquivos de configuração desta parte estão disponíveis no repositório oficial do projeto no GitHub:
+
+[🔗 github.com/chmulato/kafka-java-mastery](https://github.com/chmulato/kafka-java-mastery)
+
+Acesse, explore e contribua!
+
 ➡️ [Avance para a Parte Final: Kafka Avançado e Produção](parte-final-avancado.md)
