@@ -69,15 +69,27 @@ kafka-console-consumer --topic meu-topico --from-beginning --bootstrap-server lo
 
 ## Exemplo Java: Producer e Consumer Simples
 
-A seguir, um exemplo básico de como produzir e consumir mensagens com Java e Apache Kafka. Para rodar, adicione a dependência do Kafka Client no seu `pom.xml`:
+Os exemplos a seguir estão disponíveis como arquivos prontos para uso em:
+`parte1-fundamentos/src/main/java/SimpleProducer.java` e `parte1-fundamentos/src/main/java/SimpleConsumer.java`.
 
-```xml
-<dependency>
-  <groupId>org.apache.kafka</groupId>
-  <artifactId>kafka-clients</artifactId>
-  <version>3.7.0</version>
-</dependency>
+Para compilar e rodar os exemplos:
+
+1.Certifique-se de que o Kafka está rodando em `localhost:9092` (use o docker-compose fornecido).
+2.Crie o tópico `meu-topico` se necessário:
+
+```sh
+docker exec -it <nome_do_container_kafka> kafka-topics --bootstrap-server localhost:9092 --create --topic meu-topico --partitions 1 --replication-factor 1
 ```
+
+3.Compile e execute com Maven:
+
+```sh
+mvn compile
+mvn exec:java -Dexec.mainClass=SimpleProducer
+mvn exec:java -Dexec.mainClass=SimpleConsumer
+```
+
+O `pom.xml` já está pronto na pasta `parte1-fundamentos` com todas as dependências necessárias.
 
 ### Producer Java
 
