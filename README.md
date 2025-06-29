@@ -92,18 +92,6 @@ kafka-java-mastery/
 
 Este projeto está licenciado sob a MIT License.
 
-## Recursos de Referência
-
-- [Documentação Oficial do Apache Kafka](https://kafka.apache.org/documentation/)
-- [Confluent Platform Documentation](https://docs.confluent.io/)
-- [Kafka Streams Documentation](https://kafka.apache.org/documentation/streams/)
-- [Spring Kafka Reference](https://docs.spring.io/spring-kafka/docs/current/reference/html/)
-- [Exemplos Oficiais e Quickstart](https://kafka.apache.org/quickstart)
-
-Esses links trazem roteiros, exemplos, dicas de prática, troubleshooting e materiais para aprofundar ou expandir o treinamento.
-
----
-
 ## Arquivos de Exercícios Práticos
 
 O repositório inclui arquivos auxiliares com roteiros de exercícios, desafios práticos e espaço para anotações em cada etapa do aprendizado:
@@ -115,3 +103,15 @@ O repositório inclui arquivos auxiliares com roteiros de exercícios, desafios 
 Consulte esses arquivos para praticar, registrar aprendizados e aprofundar seus estudos.
 
 Para dúvidas, sugestões ou contribuições, abra um issue ou envie um pull request.
+
+***
+
+## Recursos de Referência
+
+- [Documentação Oficial do Apache Kafka](https://kafka.apache.org/documentation/)
+- [Confluent Platform Documentation](https://docs.confluent.io/)
+- [Kafka Streams Documentation](https://kafka.apache.org/documentation/streams/)
+- [Spring Kafka Reference](https://docs.spring.io/spring-kafka/docs/current/reference/html/)
+- [Exemplos Oficiais e Quickstart](https://kafka.apache.org/quickstart)
+
+Esses links trazem roteiros, exemplos, dicas de prática, troubleshooting e materiais para aprofundar ou expandir o treinamento.
