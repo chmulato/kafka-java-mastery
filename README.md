@@ -109,7 +109,7 @@ Esses links trazem roteiros, exemplos, dicas de prática, troubleshooting e mate
 O repositório inclui arquivos auxiliares com roteiros de exercícios, desafios práticos e espaço para anotações em cada etapa do aprendizado:
 
 - `parte1-fundamentos/exercicios-parte1.md` — Exercícios de fundamentos, comandos básicos e experimentação inicial.
-- `exercicios-parte2.md` — Exercícios de integração Java + Kafka, implementação de Producer/Consumer e testes.
+- `parte2-java/exercicios-parte2.md` — Exercícios de integração Java + Kafka, implementação de Producer/Consumer e testes.
 - `parte-final-avancado/exercicios-parte-final.md` — Desafios avançados de produção, automação, monitoramento e segurança.
 
 Consulte esses arquivos para praticar, registrar aprendizados e aprofundar seus estudos.
