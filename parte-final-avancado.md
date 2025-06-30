@@ -41,7 +41,7 @@ Consulte cada subpasta para exemplos práticos e adapte conforme o seu ambiente.
 
 - Monitoramento de brokers, tópicos e consumidores
 - Uso de JMX, Prometheus e Grafana para métricas
-- Monitoramento de lag de consumidores
+- Monitoramento de log de consumidores
 - Alertas e dashboards
 
 ## Segurança
